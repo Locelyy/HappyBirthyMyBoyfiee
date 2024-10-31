@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Bubub</title>
+    <style>
+        @font-face {
+            font-family: 'Permanent Marker';
+            src: url('PermanentMarker-Regular.ttf') format('truetype'); /* Update with the correct path and format */
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+        }
+
+        /* Fixed background with gradient */
+        .fixed-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #9ec48c, #ffe5d9 60%); /* Smooth gradient */
+            box-shadow: 0px 10px 10px #000;
+            z-index: 1; /* Ensure it stays behind other elements */
+        }
+
+        .image-container {
+            background-color: rgba(211, 211, 211, 0.2);
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%; /* Ensure it takes up space */
+            min-width: 225px;
+            min-height: 695px;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .scrollable-content {
+            position: relative;
+            z-index: 3; /* Ensure it stays above the background */
+            width: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .scrollable-img {
+            display: flex; /* Enables Flexbox */
+            flex-wrap: wrap; /* Allows wrapping of images */
+            justify-content: center; /* Centers images horizontally */
+            gap: 10px; /* Adds space between images */
+        }
+
+        .scrollable-img img {
+            width: 1080px; /* Fixed width for each image */
+            height: 1920px; /* Fixed height for each image */
+            margin: 0;
+        }
+
+        .scrollable-meme {
+            justify-content: center; /* Centers images horizontally */
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap; /* Allows wrapping of images */
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 100%) {
+            .scrollable-img {
+                flex-direction: column; /* Stacks images vertically on small screens */
+                align-items: center; /* Centers images horizontally */
+            }
+
+            .scrollable-img img {
+                width: 90%; /* Makes images responsive */
+                height: auto; /* Maintains aspect ratio */
+            }
+    
+        }
+
+
+        img[src="img/expandingphoto.png"] {
+            max-height: auto;
+            display: block;
+            width: 100%; /* Full viewport width */
+            height: auto; /* Full viewport height */
+            background-image: url('img/expandingphoto.png');
+            background-position: center;
+            display: block;
+            margin: auto;
+            background-repeat: no-repeat;
+            background-size: cover; /* Ensures it covers the entire screen while maintaining aspect ratio */
+            z-index: 4;
+            position: relative;
+        }
+
+        .video {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-top : 250px;
+            width: 100%;
+            height: auto;
+            margin: 20px auto;
+            margin-top : 250px;
+        }
+
+
+        .birthday-message {
+            color: white;
+            font-size: 3rem;
+            font-family: 'Permanent Marker', cursive;
+            text-shadow: 0px 0px 100px #000;
+            text-align: center;
+            margin: 20px auto; /* Center the container horizontally */
+            position: relative;
+            z-index: 5; /* Ensure it is above other content */
+            max-width: 100%; /* Ensures the message doesn't stretch too wide */
+            margin-top: 250px; /* Space above the message */
+            margin-bottom: 250px;
+            animation: popUp 2s ease-in-out forwards; 
+
+             
+            background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent black background */
+            padding: 20px; /* Space around the text */
+            border-radius: 15px; /* Rounded corners */
+            max-width: 600px; /* Set a maximum width */
+            position: relative; /* Positioning context for child elements */
+            z-index: 4; /* Ensure it is below the text but above other content */
+        
+
+        }
+
+        .birthday-message1 {
+            color: white;
+            font-size: 3rem;
+            font-family: 'Permanent Marker', cursive;
+            text-shadow: 0px 0px 100px #000;
+            text-align: center;
+            margin: 20px auto; /* Center the container horizontally */
+            position: relative;
+            z-index: 5; /* Ensure it is above other content */
+            max-width: 100%; /* Ensures the message doesn't stretch too wide */
+            margin-top: 500px; /* Space above the message */
+            margin-bottom: 250px;
+            animation: popUp 2s ease-in-out forwards; 
+
+            
+            background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent black background */
+            padding: 20px; /* Space around the text */
+            border-radius: 15px; /* Rounded corners */
+            max-width: 600px; /* Set a maximum width */
+            position: relative; /* Positioning context for child elements */
+            z-index: 4; /* Ensure it is below the text but above other content */
+        
+        }
+
+
+        @keyframes popUp {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .pop-up {
+            animation: popUp 0.5s ease-in-out forwards;
+        }
+
+
+        .footer {
+            width: 100vw;
+            height: 70px;
+            background: #ffe5d9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            margin-top: 250px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="fixed-bg"></div>
+
+    <!-- Scrollable content -->
+    <div class="scrollable-content">
+
+        <div class="image-container">
+            <img src="img/Ucapan.png" alt="Birthday Story">
+        </div>
+
+        <img src="img/expandingphoto.png" alt="artboard" />
+
+        <div class="birthday-message" pop-up>
+           <a>Wishing you the happiest birthdayyy sayang, kiww 19 nih taun depan kepala dua mamposs</a> 
+        </div>
+
+        <div class="scrollable-img">
+            <img src="img/1.png" alt="Foto-1" />
+            <img src="img/2.png" alt="Foto-2"/>
+            <img src="img/3.png" alt="Foto-3"/>
+            <img src="img/4.png" alt="Foto-4"/>
+            <img src="img/5.png" alt="Foto-5"/>
+        </div>
+
+        <div class="scrollable-meme">
+            <img src="img/6.jpg" alt="Foto-6"/>
+            <img src="img/7.jpg" alt="Foto-7"/>
+            <img src="img/8.jpg" alt="Foto-8"/>
+        </div>
+
+        <div class="video">
+            <video src="video/motor.mp4" controls loop muted alt="motor"></video>
+        </div>
+
+        <div class="birthday-message" >
+            <a>I miss having a night ride with uu :((</a> 
+        </div>
+
+        <div class="video">
+            <video src="video/sholat.mp4" controls loop alt="motor"></video>
+        </div>
+
+        <div class="birthday-message" pop-up>
+            Jangan lupa sholat deh wkwkwkwkw *ketawa jelek
+        </div>
+
+        <div class="video">
+            <video src="video/last.mp4" controls loop alt="last"></video>
+        </div>
+
+        <div class="birthday-message" pop-up>
+            <a>Also you already did a great job as a director ayy, i do really really proud of you aghhhhh >.< my boyfieeee so cool:D<a> 
+        </div>
+
+        <div class="birthday-message1" pop-up>
+            <a>I want you to remember this, i want you to remember that i will love you forever and you're all that I will ever need. I found you when i wasn't even looking but now i realice that i'm finally living. Because of you i'm happy, because of you i see a future where i'm loved forever. You're enough and you will always be so much more than i could've ever asued for and i just hope that you see you the way i see you. My cutest boyfiee. I'll chose you, it'll always be you. I love you forever and always don't ever forget that okayy.
+
+            I will always choose you even at the days we don't understand each other because you are the only person i want to love until the end <3
+                
+            You make me smile me every day no matter how difficult or tough life gets. You're my sunshine and my happiness rolled into one, and im so lucky to have youuu, thank u for living this far babyy, i'm so proud of youuu
+                
+            Everything is better with you. Everything has been better since you. You worth everything good in this world. <a> 
+         </div>
+        <div class="footer">
+            <h4>
+                
+            </h4>
+        </div>
+    </div>
+</body>
+</html>
